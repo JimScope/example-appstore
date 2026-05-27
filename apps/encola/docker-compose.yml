@@ -1,0 +1,21 @@
+services:
+  encola:
+    image: ghcr.io/jimscope/encola:latest
+    restart: unless-stopped
+    environment:
+      ARIA2_RPC_SECRET: ${ARIA2_RPC_SECRET}
+      ARIA2_MAX_CONCURRENT_DOWNLOADS: ${ARIA2_MAX_CONCURRENT_DOWNLOADS:-5}
+    ports:
+      - "${ARIA2_RPC_PORT:-6800}:6800/tcp"
+      - "${ARIA2_BT_PORT:-6881}:6881/tcp"
+      - "${ARIA2_BT_PORT:-6881}:6881/udp"
+    volumes:
+      - ${APP_DATA_DIR}/config:/config
+      - ${APP_DATA_DIR}/downloads:/downloads
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+
+x-runtipi:
+  schema_version: 2
+  overrides: []

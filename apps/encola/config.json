@@ -1,0 +1,34 @@
+{
+  "name": "Encola",
+  "id": "encola",
+  "available": true,
+  "short_desc": "A clean aria2 control interface.",
+  "author": "JimScope",
+  "port": 8680,
+  "categories": ["utilities"],
+  "description": "Encola is a lightweight web interface for controlling a bundled aria2 JSON-RPC daemon.",
+  "tipi_version": 1,
+  "version": "0.1.0",
+  "source": "https://github.com/JimScope/encola",
+  "exposable": true,
+  "supported_architectures": ["amd64", "arm64"],
+  "created_at": 1779916694000,
+  "updated_at": 1779916694000,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "aria2 RPC Secret",
+      "hint": "Use this same value in Encola Settings as the secret token.",
+      "required": true,
+      "env_variable": "ARIA2_RPC_SECRET"
+    },
+    {
+      "type": "number",
+      "label": "Max concurrent downloads",
+      "default": 5,
+      "required": false,
+      "env_variable": "ARIA2_MAX_CONCURRENT_DOWNLOADS"
+    }
+  ]
+}

@@ -1,6 +1,11 @@
-# Example App Store Template
+# JimScope Runtipi App Store
 
-This repository serves as a template for creating your own custom app store for the Runtipi platform. Use this as a starting point to create and share your own collection of applications.
+This repository is a custom app store for the Runtipi platform.
+
+## Apps
+
+- **Encola**: A clean aria2 control UI with a bundled aria2 daemon.
+- **Whoami**: The default sample app from the Runtipi template.
 
 ## Repository Structure
 
@@ -8,7 +13,7 @@ This repository serves as a template for creating your own custom app store for 
 
   - Each app has its own folder (e.g., `whoami/`) with the following structure:
     - `config.json`: App configuration file
-    - `docker-compose.json`: Docker setup for the app
+    - `docker-compose.yml`: Docker setup for the app with `x-runtipi` metadata
     - `metadata/`: Contains app visuals and descriptions
       - `description.md`: Markdown description of the app
       - `logo.jpg`: App logo image
